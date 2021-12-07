@@ -5,6 +5,6 @@ public class A {
         System.out.println(a++);
         System.out.println(a);
         System.out.println(++a);
-        // HIHIHI
+        // HIHIHI13123123
     }
 }
