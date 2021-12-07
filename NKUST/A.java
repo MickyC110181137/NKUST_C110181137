@@ -6,4 +6,6 @@ public class A {
         System.out.println(a);
         System.out.println(++a);
     }// 123456222222222222221111ditgit pull
+        // HIHIHI
+    }
 }
