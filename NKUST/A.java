@@ -5,5 +5,5 @@ public class A {
         System.out.println(a++);
         System.out.println(a);
         System.out.println(++a);
-    }// 12345622222222222222
+    }// 123456222222222222221111
 }
