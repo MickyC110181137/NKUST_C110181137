@@ -5,18 +5,13 @@ public class person {
     String name;
     String skill;
 
-    int gethp(){
-        return this.hp;
+    person(String personname ,int personhp,int personatt,int personmp){
+        name = personname
+        hp = personhp
+        att = personatt
+        mp = personmp
     }
-    int getatt(){
-        return this.hp;
-    }
-    int getmp(){
-        return this.hp;
-    }
-    String getname() {
-        return this.name; //this 指向此類別本身
-    }
+
     String getskill() {
         return this.skill; //this 指向此類別本身
     }
