@@ -18,6 +18,7 @@ public class person {
         minmp = mpmin;
         maxmp = mpmax ;
         System.out.println("NAME: "+name);
+
         Random ran1 = new Random();
         int hp= minhp + ran1.nextInt((maxhp- minhp) + 1);
         System.out.println("HP: "+hp);
