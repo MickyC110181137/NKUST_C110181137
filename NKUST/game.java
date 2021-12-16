@@ -21,7 +21,7 @@ public class game {
         player1.setgame("弓箭手","狂戰士","魔法師");
         player1.showplayer();
 
-        person player2 = new person("狂戰士",45,3,5,10, 2,"連續打擊");
+        person player2 = new person("狂戰士",40,4,6,10, 2,"連續打擊");
         player2.showplayer();
         player2.setgame("弓箭手","狂戰士","魔法師");
 
