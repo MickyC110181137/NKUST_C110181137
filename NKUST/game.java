@@ -12,20 +12,20 @@
     }
 }
 */
-
+import java.util.concurrent.TimeUnit;
 import java.util.Random;
 
 public class game {
     public static void main(String[] args) {
-        person player1 = new person("弓箭手",25,5,10, 5,"箭雨");
+        person player1 = new person("弓箭手",25,7,10,10, 5,"箭雨");
         player1.setgame("弓箭手","狂戰士","魔法師");
         player1.showplayer();
 
-        person player2 = new person("狂戰士",45,4,10, 2,"連續打擊");
+        person player2 = new person("狂戰士",45,3,5,10, 2,"連續打擊");
         player2.showplayer();
         player2.setgame("弓箭手","狂戰士","魔法師");
 
-        person player3 = new person("魔法師",20,15,15, 10,"豪火球");
+        person player3 = new person("魔法師",20,13,15,15, 10,"豪火球");
         player3.showplayer();
         player3.setgame("弓箭手","狂戰士","魔法師");
 
@@ -111,7 +111,15 @@ public class game {
                         System.out.println("------------------------------");
                     }
                 }
+                try {
+                    for (int k = 0; k < 1; k++) {
+                        TimeUnit.SECONDS.sleep(1);
+                    }
+                }catch(Exception e) {
+                    System.out.println(e);
+                }
             }
+
             else{
                 System.out.println("GAMEOVER\n最終戰績:");
                 player1.showplayer();
