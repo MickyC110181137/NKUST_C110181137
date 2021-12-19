@@ -33,100 +33,185 @@ public class game {
 
         Random ran = new Random();
 
-        int[] num = new int[20];
-        for(int i = 0; i < 20; i++) {
-            if (player1.HP > 0 & player2.HP > 0 & player3.HP > 0) {
+        int[] num = new int[40];
+        for(int i = 0; i < 40; i++) {
+            if (player1.HP > 0 & player2.HP > 0 & player3.HP > 0){
                 num[i] = ran.nextInt(6);
                 System.out.println("第" + (i + 1) + "回合");
-                if (num[i] == 0) {
-                    if (player1.MP >= 5) {
-                        player2.HP = player2.HP - player1.Att;
-                        player1.MP = player1.MP - 5;
-                        player1.playerAtt1();
-                        player2.showplayer();
-                        System.out.println("------------------------------");
-                    } else {
-                        player1.recover();
-                        player1.MP = player1.MP + 5;
-                        System.out.println("------------------------------");
-                    }
-                } else if (num[i] == 1) {
-                    if (player2.MP >= 2) {
-                        player3.HP = player3.HP - player2.Att;
-                        player2.MP = player2.MP - 2;
-                        player2.playerAtt2();
-                        player3.showplayer();
-                        System.out.println("------------------------------");
-                    } else {
-                        player2.recover();
-                        player2.MP = player2.MP + 5;
-                        System.out.println("------------------------------");
-                    }
-                } else if (num[i] == 2) {
-                    if (player3.MP >= 10) {
-                        player1.HP = player1.HP - player3.Att;
-                        player3.MP = player3.MP - 10;
-                        player3.playerAtt3();
-                        player1.showplayer();
-                        System.out.println("------------------------------");
-                    } else {
-                        player3.recover();
-                        player3.MP = player3.MP + 5;
-                        System.out.println("------------------------------");
-                    }
-                } else if (num[i] == 3) {
-                    if (player1.MP >= 5) {
-                        player3.HP = player3.HP - player1.Att;
-                        player1.MP = player1.MP - 5;
-                        player1.playerAtt11();
-                        player3.showplayer();
-                        System.out.println("------------------------------");
-                    } else {
-                        player1.recover();
-                        player1.MP = player1.MP + 5;
-                        System.out.println("------------------------------");
-                    }
-                } else if (num[i] == 4) {
-                    if (player2.MP >= 2) {
-                        player1.HP = player1.HP - player2.Att;
-                        player2.MP = player2.MP - 2;
-                        player2.playerAtt12();
-                        player1.showplayer();
-                        System.out.println("------------------------------");
-                    } else {
-                        player2.recover();
-                        player2.MP = player2.MP + 5;
-                        System.out.println("------------------------------");
-                    }
+            if (num[i] == 0) {
+                if (player1.MP >= 5) {
+                    player2.HP = player2.HP - player1.Att;
+                    player1.MP = player1.MP - 5;
+                    player1.playerAtt1();
+                    player2.showplayer();
+                    System.out.println("------------------------------");
                 } else {
-                    if (player3.MP >= 10) {
-                        player2.HP = player2.HP - player3.Att;
-                        player3.MP = player3.MP - 10;
-                        player3.playerAtt13();
-                        player2.showplayer();
-                        System.out.println("------------------------------");
-                    } else {
-                        player3.recover();
-                        player3.MP = player3.MP + 5;
-                        System.out.println("------------------------------");
-                    }
+                    player1.recover();
+                    player1.MP = player1.MP + 5;
+                    System.out.println("------------------------------");
                 }
-                try {
-                    for (int k = 0; k < 1; k++) {
-                        TimeUnit.SECONDS.sleep(1);
-                    }
-                }catch(Exception e) {
-                    System.out.println(e);
+            } else if (num[i] == 1) {
+                if (player2.MP >= 2) {
+                    player3.HP = player3.HP - player2.Att;
+                    player2.MP = player2.MP - 2;
+                    player2.playerAtt2();
+                    player3.showplayer();
+                    System.out.println("------------------------------");
+                } else {
+                    player2.recover();
+                    player2.MP = player2.MP + 5;
+                    System.out.println("------------------------------");
+                }
+            } else if (num[i] == 2) {
+                if (player3.MP >= 10) {
+                    player1.HP = player1.HP - player3.Att;
+                    player3.MP = player3.MP - 10;
+                    player3.playerAtt3();
+                    player1.showplayer();
+                    System.out.println("------------------------------");
+                } else {
+                    player3.recover();
+                    player3.MP = player3.MP + 5;
+                    System.out.println("------------------------------");
+                }
+            } else if (num[i] == 3) {
+                if (player1.MP >= 5) {
+                    player3.HP = player3.HP - player1.Att;
+                    player1.MP = player1.MP - 5;
+                    player1.playerAtt11();
+                    player3.showplayer();
+                    System.out.println("------------------------------");
+                } else {
+                    player1.recover();
+                    player1.MP = player1.MP + 5;
+                    System.out.println("------------------------------");
+                }
+            } else if (num[i] == 4) {
+                if (player2.MP >= 2) {
+                    player1.HP = player1.HP - player2.Att;
+                    player2.MP = player2.MP - 2;
+                    player2.playerAtt12();
+                    player1.showplayer();
+                    System.out.println("------------------------------");
+                } else {
+                    player2.recover();
+                    player2.MP = player2.MP + 5;
+                    System.out.println("------------------------------");
+                }
+            } else {
+                if (player3.MP >= 10) {
+                    player2.HP = player2.HP - player3.Att;
+                    player3.MP = player3.MP - 10;
+                    player3.playerAtt13();
+                    player2.showplayer();
+                    System.out.println("------------------------------");
+                } else {
+                    player3.recover();
+                    player3.MP = player3.MP + 5;
+                    System.out.println("------------------------------");
                 }
             }
+                while (player1.HP < 0 & player2.HP > 0 & player3.HP > 0){
+                    num[i] = ran.nextInt(2);
+                    System.out.println("第" + (i + 2) + "回合");
+                    if (num[i] == 0) {
+                        if (player2.MP >= 2) {
+                            player3.HP = player3.HP - player2.Att;
+                            player2.MP = player2.MP - 2;
+                            player2.playerAtt2();
+                            player3.showplayer();
+                            System.out.println("------------------------------");
+                        } else {
+                            player2.recover();
+                            player2.MP = player2.MP + 5;
+                            System.out.println("------------------------------");
+                        }
+                    }else {
+                        if (player3.MP >= 10) {
+                            player2.HP = player2.HP - player3.Att;
+                            player3.MP = player3.MP - 10;
+                            player3.playerAtt13();
+                            player2.showplayer();
+                            System.out.println("------------------------------");
+                        } else {
+                            player3.recover();
+                            player3.MP = player3.MP + 5;
+                            System.out.println("------------------------------");
+                        }
+                    }
+                }
+                while (player1.HP > 0 & player2.HP > 0 & player3.HP < 0) {
+                    System.out.println("第" + (i + 2) + "回合");
+                    if (num[i] == 0) {
+                        if (player1.MP >= 5) {
+                            player2.HP = player2.HP - player1.Att;
+                            player1.MP = player1.MP - 5;
+                            player1.playerAtt1();
+                            player2.showplayer();
+                            System.out.println("------------------------------");
+                        } else {
+                            player1.recover();
+                            player1.MP = player1.MP + 5;
+                            System.out.println("------------------------------");
+                        }
+                    }else {
+                        if (player2.MP >= 2) {
+                            player1.HP = player1.HP - player2.Att;
+                            player2.MP = player2.MP - 2;
+                            player2.playerAtt12();
+                            player1.showplayer();
+                            System.out.println("------------------------------");
+                        } else {
+                            player2.recover();
+                            player2.MP = player2.MP + 5;
+                            System.out.println("------------------------------");
+                        }
+                    }
+                }
+                while (player1.HP > 0 & player2.HP < 0 & player3.HP > 0) {
+                    System.out.println("第" + (i + 2) + "回合");
+                    if (num[i] == 0) {
+                        if (player1.MP >= 5) {
+                            player3.HP = player3.HP - player1.Att;
+                            player1.MP = player1.MP - 5;
+                            player1.playerAtt11();
+                            player3.showplayer();
+                            System.out.println("------------------------------");
+                        } else {
+                            player1.recover();
+                            player1.MP = player1.MP + 5;
+                            System.out.println("------------------------------");
+                        }
 
-            else{
-                System.out.println("GAMEOVER\n最終戰績:");
+                    }else {
+                        if (player3.MP >= 10) {
+                            player1.HP = player1.HP - player3.Att;
+                            player3.MP = player3.MP - 10;
+                            player3.playerAtt3();
+                            player1.showplayer();
+                            System.out.println("------------------------------");
+                        } else {
+                            player3.recover();
+                            player3.MP = player3.MP + 5;
+                            System.out.println("------------------------------");
+                        }
+                    }
+                }
+            try {
+                for (int k = 0; k < 1; k++) {
+                    TimeUnit.SECONDS.sleep(1);
+                }
+            }
+              catch (Exception e) {System.out.println(e);}
+            }
+            else {System.out.println("GAMEOVER\n最終戰績:");
                 player1.showplayer();
                 player2.showplayer();
                 player3.showplayer();
-                i = 19;
+                i = 39;
             }
         }
     }
 }
+
+
