@@ -111,9 +111,10 @@ public class game {
                     System.out.println("------------------------------");
                 }
             }
-                while (player1.HP < 0 & player2.HP > 0 & player3.HP > 0){
+                while (player1.HP <= 0 & player2.HP > 0 & player3.HP > 0){
+                    i++;
                     num[i] = ran.nextInt(2);
-                    System.out.println("第" + (i + 2) + "回合");
+                    System.out.println("第" + (i+1) + "回合");
                     if (num[i] == 0) {
                         if (player2.MP >= 2) {
                             player3.HP = player3.HP - player2.Att;
@@ -126,7 +127,7 @@ public class game {
                             player2.MP = player2.MP + 5;
                             System.out.println("------------------------------");
                         }
-                    }else {
+                    }else if (num[i] == 1) {
                         if (player3.MP >= 10) {
                             player2.HP = player2.HP - player3.Att;
                             player3.MP = player3.MP - 10;
@@ -139,9 +140,17 @@ public class game {
                             System.out.println("------------------------------");
                         }
                     }
+                    try {
+                        for (int k = 0; k < 1; k++) {
+                            TimeUnit.SECONDS.sleep(1);
+                        }
+                    }
+                    catch (Exception e) {System.out.println(e);}
                 }
-                while (player1.HP > 0 & player2.HP > 0 & player3.HP < 0) {
-                    System.out.println("第" + (i + 2) + "回合");
+                while (player1.HP > 0 & player2.HP > 0 & player3.HP <= 0) {
+                    i++;
+                    num[i] = ran.nextInt(2);
+                    System.out.println("第" + (i+1) + "回合");
                     if (num[i] == 0) {
                         if (player1.MP >= 5) {
                             player2.HP = player2.HP - player1.Att;
@@ -154,7 +163,7 @@ public class game {
                             player1.MP = player1.MP + 5;
                             System.out.println("------------------------------");
                         }
-                    }else {
+                    }else if (num[i] == 1) {
                         if (player2.MP >= 2) {
                             player1.HP = player1.HP - player2.Att;
                             player2.MP = player2.MP - 2;
@@ -167,9 +176,17 @@ public class game {
                             System.out.println("------------------------------");
                         }
                     }
+                    try {
+                        for (int k = 0; k < 1; k++) {
+                            TimeUnit.SECONDS.sleep(1);
+                        }
+                    }
+                    catch (Exception e) {System.out.println(e);}
                 }
-                while (player1.HP > 0 & player2.HP < 0 & player3.HP > 0) {
-                    System.out.println("第" + (i + 2) + "回合");
+                while (player1.HP > 0 & player2.HP <= 0 & player3.HP > 0) {
+                    i++;
+                    num[i] = ran.nextInt(2);
+                    System.out.println("第" + (i+1) + "回合");
                     if (num[i] == 0) {
                         if (player1.MP >= 5) {
                             player3.HP = player3.HP - player1.Att;
@@ -182,8 +199,7 @@ public class game {
                             player1.MP = player1.MP + 5;
                             System.out.println("------------------------------");
                         }
-
-                    }else {
+                    }else if (num[i] == 1){
                         if (player3.MP >= 10) {
                             player1.HP = player1.HP - player3.Att;
                             player3.MP = player3.MP - 10;
@@ -196,6 +212,12 @@ public class game {
                             System.out.println("------------------------------");
                         }
                     }
+                    try {
+                        for (int k = 0; k < 1; k++) {
+                            TimeUnit.SECONDS.sleep(1);
+                        }
+                    }
+                    catch (Exception e) {System.out.println(e);}
                 }
             try {
                 for (int k = 0; k < 1; k++) {
