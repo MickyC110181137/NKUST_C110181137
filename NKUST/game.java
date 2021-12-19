@@ -32,19 +32,47 @@ public class game {
         System.out.println("\n");
 
         Random ran = new Random();
+        int[] weapon = new int[3];
+        for(int j = 0; j < 3 ; j++){
+            weapon[j] = ran.nextInt(2);
+        }
+        if(weapon[0] == 1){
+            player1.Att = player1.Att + 10;
+            System.out.println(player1.name + "幸運獲得神器[大大弓]，攻擊力提升10點");
+        }else{
+            System.out.println(player1.name + "很非洲沒有得到神器加持");
+        }
+        if(weapon[1] == 1){
+            player2.Att = player2.Att + 10;
+            System.out.println(player2.name + "幸運獲得神器[咖哩棒]，攻擊力提升10點");
+        }else{
+            System.out.println(player2.name + "很非洲沒有得到神器加持");
+        }
+        if(weapon[2] == 1){
+            player3.Att = player3.Att + 10;
+            System.out.println(player3.name + "幸運獲得神器[大棒棒]，攻擊力提升10點");
+        }else{
+            System.out.println(player3.name + "很非洲沒有得到神器加持");
+        }
+        System.out.println("\n");
+        System.out.println("加持後的屬性面板");
+        player1.showplayer();
+        player2.showplayer();
+        player3.showplayer();
+        System.out.println("\n");
 
         int[] num = new int[40];
         for(int i = 0; i < 40; i++) {
             if (player1.HP > 0 & player2.HP > 0 & player3.HP > 0){
                 num[i] = ran.nextInt(6);
                 System.out.println("第" + (i + 1) + "回合");
-            if (num[i] == 0) {
-                if (player1.MP >= 5) {
-                    player2.HP = player2.HP - player1.Att;
-                    player1.MP = player1.MP - 5;
-                    player1.playerAtt1();
-                    player2.showplayer();
-                    System.out.println("------------------------------");
+                if (num[i] == 0) {
+                    if (player1.MP >= 5) {
+                        player2.HP = player2.HP - player1.Att;
+                        player1.MP = player1.MP - 5;
+                        player1.playerAtt1();
+                        player2.showplayer();
+                        System.out.println("------------------------------");
                 } else {
                     player1.recover();
                     player1.MP = player1.MP + 5;

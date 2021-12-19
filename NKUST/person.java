@@ -93,12 +93,12 @@ public class person {
         System.out.println(this.name + "使出技能: " + skillName);
     }
 
-    void attack(){
-        System.out.print("消耗" + mplost + "MP攻擊");
-    }
-    void attacked(){
-        System.out.print(name);
-    }
+//    void attack(){
+//        System.out.print("消耗" + mplost + "MP攻擊");
+//    }
+//    void attacked(){
+//        System.out.print(name);
+//    }
 
     void attack1() {
         System.out.println("消耗5MP攻擊" + this.player2);
@@ -125,7 +125,7 @@ public class person {
 
     void playerAtt1(){
         player1shout();
-        attack2();
+        attack1();
         //showplayer1();
     }
     void playerAtt2(){
