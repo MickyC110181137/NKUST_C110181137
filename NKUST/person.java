@@ -18,6 +18,7 @@ public class person {
         minmp = mpmin;
         maxmp = mpmax ;
         System.out.println("NAME: "+name);
+
         Random ran1 = new Random();
         int hp= minhp + ran1.nextInt((maxhp- minhp) + 1);
         System.out.println("HP: "+hp);
@@ -41,20 +42,26 @@ public class person {
     }
 }
 */
-
+import java.util.Random;
 public class person {
-    int HP, Att, MP , mplost;
+    int HP, minatt,maxatt, MP , mplost,Att;
     String name, player1, player2, player3;
 
     String skillName;
 
-    person(String playername ,int playerHP, int playerAtt, int playerMP, int playermplost, String playerskill){
+    person(String playername ,int playerHP, int attmin,int attmax, int playerMP, int playermplost, String playerskill){
         name = playername;
         HP = playerHP;
-        Att = playerAtt;
+        minatt = attmin;
+        maxatt = attmax ;
         MP = playerMP;
         mplost = playermplost;
         skillName = playerskill;
+
+        Random ran2 = new Random();
+        int att = minatt + ran2.nextInt((maxatt- minatt) + 1);
+        Att = att;
+
     }
 
     void showplayer(){
