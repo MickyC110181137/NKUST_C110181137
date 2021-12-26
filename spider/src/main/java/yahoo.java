@@ -29,7 +29,7 @@ public class yahoo {
 
                         if (doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_r > div:nth-child(10) > a").size() == 0){//沒有導演簡介的話
                             Elements pic = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_l > div.movie_intro_foto > img");//抓電影封面照
-                            System.out.println(pic);
+                            System.out.println("宣傳海報: " + pic);
                             System.out.print("電影名稱: " + name);
                             System.out.println(num.attr("data-num"));
                             System.out.println("導演名稱: " + name2);
@@ -40,7 +40,7 @@ public class yahoo {
                             Document doc3 = Jsoup.connect(introduction2.absUrl("href")).get();//進入導演簡介網址
                             String introduction3 = doc3.select("#content_l > div.personal_lb > div > div.lbcontennt > div.personal_lb_l._c > p").text();//抓出導演簡介
                             Elements pic = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_l > div.movie_intro_foto > img");//抓電影封面照
-                            System.out.println(pic);
+                            System.out.println("宣傳海報: " + pic);
                             System.out.print("電影名稱: " + name);
                             System.out.println(num.attr("data-num"));
                             System.out.println("導演名稱: " + name2);
