@@ -8,6 +8,7 @@
            加分:使用額外技術                                 */
 
 public class Final_report {
-//123123
+    public static void main(String[] args) {
 
+    }
 }

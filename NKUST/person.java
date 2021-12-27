@@ -83,15 +83,11 @@ public class person {
         return this.name;
     }
 
-    void player1shout() {
+    void playershout() {
         System.out.println(this.name + "使出技能: " + skillName);
     }
-    void player2shout() {
-        System.out.println(this.name + "使出技能: " + skillName);
-    }
-    void player3shout() {
-        System.out.println(this.name + "使出技能: " + skillName);
-    }
+    //void player2shout() {System.out.println(this.name + "使出技能: " + skillName);}
+    //void player3shout() {System.out.println(this.name + "使出技能: " + skillName);}
 
 //    void attack(){
 //        System.out.print("消耗" + mplost + "MP攻擊");
@@ -124,32 +120,32 @@ public class person {
     }
 
     void playerAtt1(){
-        player1shout();
+        playershout();
         attack1();
         //showplayer1();
     }
     void playerAtt2(){
-        player2shout();
+        playershout();
         attack2();
         //showplayer2();
     }
     void playerAtt3(){
-        player3shout();
+        playershout();
         attack3();
         //showplayer3();
     }
     void playerAtt11(){
-        player1shout();
+        playershout();
         attack11();
         //showplayer1();
     }
     void playerAtt12(){
-        player2shout();
+        playershout();
         attack12();
         // showplayer2();
     }
     void playerAtt13(){
-        player3shout();
+        playershout();
         attack13();
         //showplayer3();
     }
