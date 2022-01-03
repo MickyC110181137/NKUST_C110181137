@@ -33,6 +33,8 @@ public class game {
 
         Random ran = new Random();
         int[] weapon = new int[3];
+        int[]clothes = new int[3];
+
         for(int j = 0; j < 3 ; j++){
             weapon[j] = ran.nextInt(2);
         }
@@ -53,6 +55,28 @@ public class game {
             System.out.println(player3.name + "幸運獲得神器[大棒棒]，攻擊力提升10點");
         }else{
             System.out.println(player3.name + "很非洲沒有得到神器加持");
+        }
+
+        for(int k = 0; k < 3; k++){
+            weapon [k] = ran.nextInt(2);
+        }
+        if (weapon[0] == 1){
+            player1.HP = player1.HP + 10;
+            System.out.println(player1.name + "幸運獲得服裝[盔甲]，生命力提升10點");
+        }else {
+            System.out.println(player1.name + "很非洲沒有得到神器加持");
+        }
+        if(weapon[1] == 1){
+            player2.HP = player3.HP + 10;
+            System.out.println(player2.name + "幸運獲得服裝[布衣]，生命力提升10點");
+        }else{
+            System.out.println(player2.name +"很非洲沒有得到神器加持");
+        }
+        if (weapon[2]==1){
+            player3.HP = player3.HP + 10;
+                    System.out.println(player3.name +"幸運獲得服裝[靴子]，生命力提升10點");
+        }else{
+            System.out.println(player3.name +"很非洲沒有得到神器加持");
         }
         System.out.println("\n");
         System.out.println("加持後的屬性面板");
