@@ -4,20 +4,17 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.util.Scanner;
+import java.util.SplittableRandom;
 
 public class yahoo {
     public static void main(String[] args) {
             try {
                 int s;//1是現正上映的電影，2是電影熱銷排名
                 Scanner select = new Scanner(System.in);
-                System.out.println("輸入1的話顯示現正上映的電影，輸入2的話顯示熱銷的電影");
+                System.out.println("輸入1是現正上映的電影，輸入2是電影熱銷排名");
                 s = select.nextInt();
-                if(s == 1){//選擇現正上映的電影
-                    //for(int k = 1; k < 6; k++){//變換到2不同頁數
-                    Scanner page = new Scanner(System.in);
-                    System.out.println("總共有五頁，請選擇要的頁數");
-                    int k;
-                     k = page.nextInt();
+                if(s == 1){
+                    for(int k = 1; k < 6; k++){//變換到不同頁數
                         int i = 0;
                         Document doc = Jsoup.connect("https://movies.yahoo.com.tw/movie_intheaters.html?page=" + k).get();//進入上映中 - Yahoo奇摩電影
                         System.out.println(doc.title() + "Page" + k + "---------------------------------------------------------------------------------\n");
@@ -57,8 +54,9 @@ public class yahoo {
                                 System.out.println("演員名稱: " + name3 + "\n");
                             }
                         }
+                    }
                 }
-                else if(s == 2){//選擇電影熱銷排名
+                else if(s == 2){
                     Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();
                     System.out.println(doc.title());
                     String way = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(2) > div:nth-child(4) > a > dl > dd > h2").text();
