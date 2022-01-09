@@ -3,9 +3,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.SplittableRandom;
-
 public class yahoo {
+
         public static void main (String[]args){
             try {
                 for (int k = 1; k < 6; k++) {            //用for迴圈抓yahoo的電腦名稱，假設K是資料的代號，然後K=1；K<6是只要抓到第五頁的資料就好，賴宏宇有說也可以寫K<=5，然後K++是每一頁結束就會再加一頁
@@ -18,9 +17,18 @@ public class yahoo {
                         System.out.println("電影名稱: " + name);  //叫出"電影名稱:" + 抓到的電影名稱的資料
                     }
                 }
-            } catch (Exception e) {
-                System.out.println("error: " + e);
+            Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();
+            System.out.println(doc.title());
+            String way = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(2) > div:nth-child(4) > a > dl > dd > h2").text();
+            System.out.println("排名: " + 1 + " " + way);
+            int r = 1;
+            for (int a = 3; a <= 21; a++ ){
+                r = r + 1;
+                String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();
+                System.out.println("排名: " + r + " " + way1);
             }
+        } catch (Exception e) {
+            System.out.println("error: " + e);
         }
     }
-
+}
