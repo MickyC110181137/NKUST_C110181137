@@ -55,17 +55,17 @@ public class yahoo2 {
                 }
             }
             else if(s == 2){//選擇電影熱銷排名
-                Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();
-                System.out.println(doc.title());
-                String way = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(2) > div:nth-child(4) > a > dl > dd > h2").text();
+                Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();//到yahoo上映中
+                System.out.println(doc.title());//抓標題
+                String way = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(2) > div:nth-child(4) > a > dl > dd > h2").text();//抓第一個電影名稱
                 System.out.println("排名: " + 1 + " " + way);
                 int r = 1;
-                for (int a = 3; a <= 21; a++) {
+                for (int a = 3; a <= 21; a++ ){
                     r = r + 1;
-                    String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();
+                    String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();//抓電影名稱
                     System.out.println("排名: " + r + " " + way1);
                 }
-            }
+            }//58到68都是我寫的~~一直被蓋掉，哭ㄚㄚㄚㄚ
         }catch (Exception e) {
             System.out.println("error: " + e);
         }
