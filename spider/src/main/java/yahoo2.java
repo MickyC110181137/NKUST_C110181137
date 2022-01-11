@@ -48,15 +48,15 @@ public class yahoo2 {
                 }
             }//s=1
             else if(s == 2){//選擇電影熱銷排名
-                Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();
-                System.out.println(doc.title());
-                String way = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(2) > div:nth-child(4) > a > dl > dd > h2").text();
-                System.out.println("排名: " + 1 + " " + way);
-                int r = 1;
-                for (int a = 3; a <= 21; a++) {
-                    r = r + 1;
-                    String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();
-                    System.out.println("排名: " + r + " " + way1);
+                Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();                                                                //這
+                System.out.println(doc.title());                                                                                                             //是
+                String way = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(2) > div:nth-child(4) > a > dl > dd > h2").text();//我
+                System.out.println("排名: " + 1 + " " + way);                                                                                                //做
+                int r = 1;                                                                                                                                   //的
+                for (int a = 3; a <= 21; a++) {                                                                                                              //謝
+                    r = r + 1;                                                                                                                               //謝
+                    String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();  //老
+                    System.out.println("排名: " + r + " " + way1);                                                                                            //師
                 }
             }
         }catch (Exception e) {
