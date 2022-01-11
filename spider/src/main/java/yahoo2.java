@@ -12,18 +12,18 @@ public class yahoo2 {
             System.out.println("輸入1的話顯示現正上映的電影，輸入2的話顯示熱銷的電影");
             s = select.nextInt();//使用整數s當選擇的代號
             if (s == 1) {//選擇現正上映的電影
-                for (int k = 1; k < 6; k++) {            //用for迴圈抓yahoo的電腦名稱，假設K是資料的代號，然後K=1；K<6是只要抓到第五頁的資料就好，賴宏宇有說也可以寫K<=5，然後K++是每一頁結束就會再加一頁
-                    int i = 0;
-                    Document doc = Jsoup.connect("https://movies.yahoo.com.tw/movie_intheaters.html?page=" + k).get();  //抓yahoo電影上映中的資料
-                    System.out.println(doc.title() + "Page" + k + "---------------------------------------------------------------------------------");  //這個是資料跑出來的時候會分割資料的
-                    for (int j = 1; j <= 10; j++) {   //J是For迴圈跑十次
-                        Elements choose = doc.select("#content_l > div.release_box ul li:nth-child(" + j + ") a");//從doc選擇要抓取電影網址的位置
+                for (int k = 1; k < 6; k++) {            //用for迴圈抓yahoo的電腦名稱，假設K是資料的代號，然後K=1；K<6是只要抓到第五頁的資料就好，賴宏宇有說也可以寫K<=5，然後K++是每一頁結束就會再加一頁//黃凱祺說要的
+                    int i = 0;                                                                                                                                                                //黃凱祺說要的
+                    Document doc = Jsoup.connect("https://movies.yahoo.com.tw/movie_intheaters.html?page=" + k).get();  //抓yahoo電影上映中的資料                                              //黃凱祺說要的
+                    System.out.println(doc.title() + "Page" + k + "---------------------------------------------------------------------------------");  //這個是資料跑出來的時候會分割資料的   //黃凱祺說要的
+                    for (int j = 1; j <= 10; j++) {   //J是For迴圈跑十次                                                                                                                     //黃凱祺說要的
+                        Elements choose = doc.select("#content_l > div.release_box ul li:nth-child(" + j + ") a");//從doc選擇要抓取電影網址的位置                                             
                         Elements items = doc.getElementsByClass("release_movie_name");//這行加下面兩行用來取得綜合評分分數
                         Element item = items.get(j - 1);//因為要從0開始，所以讓j-1
                         Element num = item.getElementsByTag("span").get(1);
                         Element choose2 = choose.get(0);//從第16行select的位置選取物件
-                        String name = doc.getElementsByClass("release_movie_name").get(i).text(); //這個是抓電影名稱，get(i)是抓第i個資料，然後text是抓文字
-                        i = i + 1;   //I是分別抓1到10的電影名稱
+                        String name = doc.getElementsByClass("release_movie_name").get(i).text(); //這個是抓電影名稱，get(i)是抓第i個資料，然後text是抓文字                                   //黃凱祺說要的
+                        i = i + 1;   //I是分別抓1到10的電影名稱                                                                                                                            //黃凱祺說要的
                         Document doc2 = Jsoup.connect(choose2.absUrl("href")).get();//進入href裡面的網址
                         Elements items1 = doc2.getElementsByClass("movie_intro_info_r");
                         Element item2 = items1.get(0);//從movie_intro_info_r這個class選取物件
