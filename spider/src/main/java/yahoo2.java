@@ -65,7 +65,7 @@ public class yahoo2 {
                     String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();//抓電影名稱
                     System.out.println("排名: " + r + " " + way1);
                 }
-            }//58到68都是我寫的~~一直被蓋掉，哭ㄚㄚㄚㄚ
+            }//58到68都是我寫的一直被蓋掉，哭ㄚ
         }catch (Exception e) {
             System.out.println("error: " + e);
         }
