@@ -4,7 +4,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.util.Scanner;
 import java.util.SplittableRandom;
-
+//yo
 public class yahoo2 {
     public static void main(String[] args) {
         try {
