@@ -3,8 +3,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.util.Scanner;
-import java.util.SplittableRandom;
-//yo
+
 public class yahoo2 {
     public static void main(String[] args) {
         try {
@@ -21,12 +20,12 @@ public class yahoo2 {
                         Elements choose = doc.select("#content_l > div.release_box ul li:nth-child(" + j + ") a");//從doc選擇要抓取電影網址的位置
                         Elements items = doc.getElementsByClass("release_movie_name");//這行加下面兩行用來取得綜合評分分數
                         Element item = items.get(j - 1);//因為要從0開始，所以讓j-1
-                        Element num = item.getElementsByTag("span").get(1);
-                        Element choose2 = choose.get(0);//從第16行select的位置選取物件
+                        Element num = item.getElementsByTag("span").get(1);//要取得的是第二個span，所以get()設1
+                        Element choose2 = choose.get(0);//從第21行select的位置選取物件
                         String name = doc.getElementsByClass("release_movie_name").get(i).text(); //這個是抓電影名稱，get(i)是抓第i個資料，然後text是抓文字
                         i = i + 1;   //I是分別抓1到10的電影名稱
                         Document doc2 = Jsoup.connect(choose2.absUrl("href")).get();//進入href裡面的網址
-                        Elements items1 = doc2.getElementsByClass("movie_intro_info_r");
+                        Elements items1 = doc2.getElementsByClass("movie_intro_info_r");//此class裡包含導演名稱、演員名稱
                         Element item2 = items1.get(0);//從movie_intro_info_r這個class選取物件
                         String name2 = item2.getElementsByClass("movie_intro_list").get(0).text();//抓導演名稱
                         String name3 = item2.getElementsByClass("movie_intro_list").get(1).text();//抓演員名稱
@@ -35,7 +34,7 @@ public class yahoo2 {
                             Elements pic = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_l > div.movie_intro_foto > img");//抓電影封面照
                             System.out.println("宣傳海報: " + pic);
                             System.out.print("電影名稱: " + name);
-                            System.out.println(num.attr("data-num"));
+                            System.out.println(num.attr("data-num"));//後來抓的分數
                             System.out.println("導演名稱: " + name2);
                             System.out.println("無導演簡介");
                             System.out.println("演員名稱: " + name3 + "\n");
@@ -65,7 +64,7 @@ public class yahoo2 {
                     String way1 = doc.select("#content_l > div > div.rank_list.table.rankstyle1 > div:nth-child(" + a + ") > div:nth-child(4) div").text();//抓電影名稱
                     System.out.println("排名: " + r + " " + way1);
                 }
-            }//58到68都是我寫的一直被蓋掉，哭ㄚ
+            }//58到68都是我寫的~~一直被蓋掉，哭ㄚㄚㄚㄚ
         }catch (Exception e) {
             System.out.println("error: " + e);
         }
