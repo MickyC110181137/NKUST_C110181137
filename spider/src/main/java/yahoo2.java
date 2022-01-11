@@ -2,8 +2,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.net.URL;
 import java.util.Scanner;
-import java.util.SplittableRandom;
 
 public class yahoo2 {
     public static void main(String[] args) {
@@ -31,29 +32,23 @@ public class yahoo2 {
                         String name2 = item2.getElementsByClass("movie_intro_list").get(0).text();//抓導演名稱
                         String name3 = item2.getElementsByClass("movie_intro_list").get(1).text();//抓演員名稱
                         Elements introduction = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_r > div:nth-child(10) > a");//抓取進入導演簡介位置網址
+                        Elements pic = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_l > div.movie_intro_foto > img");//抓電影封面照
+                        System.out.println("宣傳海報: " + pic.attr("src"));
+                        System.out.print("電影名稱: " + name);
+                        System.out.println(num.attr("data-num"));
+                        System.out.println("導演名稱: " + name2);
                         if (doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_r > div:nth-child(10) > a").size() == 0) {//沒有導演簡介的話
-                            Elements pic = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_l > div.movie_intro_foto > img");//抓電影封面照
-                            System.out.println("宣傳海報: " + pic);
-                            System.out.print("電影名稱: " + name);
-                            System.out.println(num.attr("data-num"));
-                            System.out.println("導演名稱: " + name2);
                             System.out.println("無導演簡介");
-                            System.out.println("演員名稱: " + name3 + "\n");
                         } else {//有導演簡介的話
                             Element introduction2 = introduction.get(0);
                             Document doc3 = Jsoup.connect(introduction2.absUrl("href")).get();//進入導演簡介網址
                             String introduction3 = doc3.select("#content_l > div.personal_lb > div > div.lbcontennt > div.personal_lb_l._c > p").text();//抓出導演簡介
-                            Elements pic = doc2.select("#content_l > div:nth-child(1) > div.l_box_inner > div > div > div.movie_intro_info_l > div.movie_intro_foto > img");//抓電影封面照
-                            System.out.println("宣傳海報: " + pic);
-                            System.out.print("電影名稱: " + name);
-                            System.out.println(num.attr("data-num"));
-                            System.out.println("導演名稱: " + name2);
                             System.out.println("導演簡介: " + introduction3);
-                            System.out.println("演員名稱: " + name3 + "\n");
                         }
+                        System.out.println("演員名稱: " + name3 + "\n");
                     }
                 }
-            }
+            }//s=1
             else if(s == 2){//選擇電影熱銷排名
                 Document doc = Jsoup.connect("https://movies.yahoo.com.tw/chart.html").get();
                 System.out.println(doc.title());
@@ -71,3 +66,4 @@ public class yahoo2 {
         }
     }
 }
+
