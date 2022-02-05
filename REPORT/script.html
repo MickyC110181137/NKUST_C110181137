@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<style>
+    html,
+    body{
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .span-text{
+        background-color: rgb(104, 165, 226);
+        color: ivory;
+    }
+</style>
+<html>
+    <body>
+        <div id=app></div>
+    </body>
+</html>
+<script>
+    const span = document.createElement("span")
+    span.innerHTML = "HI I'M MICKY"
+    span.className = "span-text"
+    const rootAPP = document.getElementById("app")
+    rootAPP.append(span)
+</script>
+</html>
